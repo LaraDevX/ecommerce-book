@@ -6,7 +6,7 @@ use App\Traits\ResponseTrait;
 
 interface UserServiceInterface
 {
-    public function registerUser($userDTO);
+    public function registerUser($data);
     public function loginUser($data);
     public function verifyEmail($token);
 }
