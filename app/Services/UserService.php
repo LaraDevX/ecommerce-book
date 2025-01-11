@@ -16,11 +16,11 @@ class UserService extends BaseService implements UserServiceInterface
     {
         //
     }
-    public function registerUser($userDTO){
+    public function registerUser($userData){
         $data = [
-            'name' => $userDTO->name,
-            'email' => $userDTO->email,
-            'password' => bcrypt($userDTO->password),
+            'name' => $userData['name'],
+            'email' => $userData['email'],
+            'password' => bcrypt($userData['password']),
             'verification_token' => Str::random(20)
         ];
         return $this->userRepository->createUser($data);
