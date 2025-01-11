@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Jobs\SendEmailJob;
 use Illuminate\Http\Request;
 use App\Traits\ResponseTrait;
 use App\Http\Resources\UserResource;
