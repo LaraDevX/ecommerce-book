@@ -16,7 +16,7 @@ class UserRepository implements UserRepositoryInterface
         $user->password = $data['password'];
         $user->verification_token = $data['verification_token'];
         $user->save();
-        return $user;
+        return $user->with('role');
     }
     public function getUserByEmail($email){
         return User::where('email', $email)->firstOrFail();
@@ -25,6 +25,6 @@ class UserRepository implements UserRepositoryInterface
         $user = User::where('verification_token', $token)->firstOrFail();
         $user->email_verified_at = now();
         $user->save();
-        return $user;
+        return $user->with('role');
     }
 }
