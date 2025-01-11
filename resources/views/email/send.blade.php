@@ -1,3 +1,4 @@
 <div>
-    <!-- Nothing in life is to be feared, it is only to be understood. Now is the time to understand more, so that we may fear less. - Marie Curie -->
+    <h1>Welcome, {{$name}} !</h1>
+    <a href="{{$link}}"><h4>Email Verification</h4></a>
 </div>
