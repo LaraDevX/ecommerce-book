@@ -2,13 +2,11 @@
 
 namespace App\Interfaces\Services;
 
-class UserServiceInterface
+use App\Traits\ResponseTrait;
+
+interface UserServiceInterface
 {
-    /**
-     * Create a new class instance.
-     */
-    public function __construct()
-    {
-        //
-    }
+    public function registerUser($userDTO);
+    public function loginUser($data);
+    public function verifyEmail($token);
 }

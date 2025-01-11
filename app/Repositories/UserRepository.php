@@ -2,13 +2,29 @@
 
 namespace App\Repositories;
 
-class UserRepository
+use App\Jobs\SendEmailJob;
+use App\Models\User;
+use Illuminate\Support\Str;
+use App\Interfaces\Repositories\UserRepositoryInterface;
+
+class UserRepository implements UserRepositoryInterface
 {
-    /**
-     * Create a new class instance.
-     */
-    public function __construct()
-    {
-        //
+    public function createUser($data){
+        $user = new User();
+        $user->name = $data['name'];
+        $user->email = $data['email'];
+        $user->password = $data['password'];
+        $user->verification_token = $data['verification_token'];
+        $user->save();
+        return $user;
+    }
+    public function getUserByEmail($email){
+        return User::where('email', $email)->firstOrFail();
+    }
+    public function findUserByToken($token){
+        $user = User::where('verification_token', $token)->firstOrFail();
+        $user->email_verified_at = now();
+        $user->save();
+        return $user;
     }
 }

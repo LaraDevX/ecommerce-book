@@ -2,13 +2,9 @@
 
 namespace App\Interfaces\Repositories;
 
-class UserRepositoryInterface
+interface UserRepositoryInterface
 {
-    /**
-     * Create a new class instance.
-     */
-    public function __construct()
-    {
-        //
-    }
+    public function createUser($data);
+    public function getUserByEmail($email);
+    public function findUserByToken($token);
 }
