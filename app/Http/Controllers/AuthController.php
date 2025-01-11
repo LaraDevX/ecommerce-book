@@ -19,7 +19,6 @@ class AuthController extends Controller
     public function register(RegisterRequest $request){
 
         $user = $this->userService->registerUser($request->all());
-        SendEmailJob::dispatch($user);
         return $this->success(new UserResource($user), __('successes.user.created'), 201);
     }
     public function login(LoginRequest $request){
