@@ -2,7 +2,6 @@
 
 namespace App\Interfaces\Services;
 
-use App\Traits\ResponseTrait;
 
 interface UserServiceInterface
 {
