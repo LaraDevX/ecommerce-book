@@ -19,7 +19,7 @@ class AuthController extends Controller
     public function register(RegisterRequest $request){
 
         $user = $this->userService->registerUser($request->all());
-        return $this->success(new UserResource($user), __('successes.user.created'), 201);
+        return $this->success(new UserResource($user->load('role')), __('successes.user.created'), 201);
     }
     public function login(LoginRequest $request){
         $token = $this->userService->loginUser($request->all());

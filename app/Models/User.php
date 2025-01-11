@@ -48,8 +48,9 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
-    public function role(){
-        return $this->hasOne(Role::class);
+    public function role()
+    {
+        return $this->belongsTo(Role::class);
     }
     public function books(){
         return $this->hasMany(Book::class);
