@@ -17,7 +17,7 @@ class UserRepository implements UserRepositoryInterface
         $user->verification_token = $data['verification_token'];
         $user->save();
         SendEmailJob::dispatch($user);
-        return $user;
+        return $user->load('role');
     }
     public function getUserByEmail($email){
         return User::where('email', $email)->firstOrFail();
