@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Traits\ResponseTrait;
+use App\Http\Resources\UserResource;
+use App\Http\Requests\Auth\LoginRequest;
+use App\Http\Requests\Auth\RegisterRequest;
 use App\Interfaces\Services\UserServiceInterface;
 
 class AuthController extends Controller
