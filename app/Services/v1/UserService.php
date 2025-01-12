@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Services;
+namespace App\Services\v1;
 
 use App\DTO\UserDTO;
 use Illuminate\Support\Str;
+use App\Services\BaseService;
 use App\Traits\ResponseTrait;
 use Illuminate\Support\Facades\Hash;
 use App\Interfaces\Services\UserServiceInterface;
