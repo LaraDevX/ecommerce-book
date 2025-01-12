@@ -9,7 +9,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Resources\v1\UserResource;
 use App\Http\Requests\Auth\LoginRequest;
 use App\Http\Requests\Auth\RegisterRequest;
-use App\Interfaces\Services\UserServiceInterface;
+use App\Interfaces\Services\v1\UserServiceInterface;
 
 class AuthController extends Controller
 {

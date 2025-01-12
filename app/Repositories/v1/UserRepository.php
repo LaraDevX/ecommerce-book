@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Repositories;
+namespace App\Repositories\v1;
 
-use App\Jobs\SendEmailJob;
 use App\Models\User;
+use App\Jobs\SendEmailJob;
 use Illuminate\Support\Str;
-use App\Interfaces\Repositories\UserRepositoryInterface;
+use App\Interfaces\Repositories\v1\UserRepositoryInterface;
 
 class UserRepository implements UserRepositoryInterface
 {

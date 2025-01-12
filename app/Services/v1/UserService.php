@@ -7,8 +7,8 @@ use Illuminate\Support\Str;
 use App\Services\BaseService;
 use App\Traits\ResponseTrait;
 use Illuminate\Support\Facades\Hash;
-use App\Interfaces\Services\UserServiceInterface;
-use App\Interfaces\Repositories\UserRepositoryInterface;
+use App\Interfaces\Services\v1\UserServiceInterface;
+use App\Interfaces\Repositories\v1\UserRepositoryInterface;
 
 class UserService extends BaseService implements UserServiceInterface
 {
