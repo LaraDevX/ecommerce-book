@@ -18,7 +18,6 @@ class AuthController extends Controller
 
     }
     public function register(RegisterRequest $request){
-
         $user = $this->userService->registerUser($request->toArray());
         return $this->success(new UserResource($user), __('successes.user.created'), 201);
     }
