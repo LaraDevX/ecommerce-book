@@ -53,7 +53,7 @@ class User extends Authenticatable
         return $this->belongsTo(Role::class);
     }
     public function books(){
-        return $this->hasMany(Book::class);
+        return $this->morphMany(Book::class, 'bookable');
     }
     public function orders(){
         return $this->hasMany(Order::class);
