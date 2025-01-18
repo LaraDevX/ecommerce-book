@@ -52,7 +52,7 @@ return [
     'email' => ':attribute maydoni toʻgʻri elektron pochta manzili boʻlishi kerak.',
     'ends_with' => 'The :attribute field must end with one of the following: :values.',
     'enum' => 'The selected :attribute is invalid.',
-    'exists' => 'Tanlangan :atribut yaroqsiz.',
+    'exists' => 'Tanlangan :attribute yaroqsiz.',
     'extensions' => 'The :attribute field must have one of the following extensions: :values.',
     'file' => ':attribute maydoni fayl bo\'lishi kerak.',
     'filled' => 'The :attribute field must have a value.',
