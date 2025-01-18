@@ -31,10 +31,11 @@ class UserService extends BaseService implements UserServiceInterface
         if(!$user || !Hash::check($data['password'], $user->password)){
             return $this->error(__('errors.user.not_found'), 404);
         }
-        if($user->email_verified_at == null){
-            return $this->error(__('errors.email.not_verified'), 403);
+        if($user->email_verified_at !== null){
+            $token = $user->createToken('login')->plainTextToken;
+            return $this->success($token, __('successes.user.logged'));
         }
-        return $user->createToken('login')->plainTextToken;
+        return $this->error(__('errors.email.not_verified'), 403);
 
     }
 
