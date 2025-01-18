@@ -22,8 +22,7 @@ class AuthController extends Controller
         return $this->success(new UserResource($user), __('successes.user.created'), 201);
     }
     public function login(LoginRequest $request){
-        $token = $this->userService->loginUser($request->all());
-        return $this->success($token, __('successes.user.logged'));
+        return $this->userService->loginUser($request->all());
     }
     public function findUser(Request $request){
         return $this->success(new UserResource($request->user()));
