@@ -13,6 +13,7 @@ Route::middleware('setLocale')->group(function(){
         Route::get('/search', [BookController::class, 'search']);
         Route::apiResource('/books', BookController::class);
     });
+    Route::apiResource('/categories', CategoryController::class);
     Route::post('/register', [AuthController::class, 'register']);
     Route::post('/login', [AuthController::class, 'login']);
     Route::get('/email-verify', [AuthController::class, 'verifyEmail']);
