@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\v1\AuthController;
+use App\Http\Controllers\v1\CategoryController;
 
 Route::middleware('setLocale')->group(function(){
     Route::middleware('auth:sanctum')->group(function(){
