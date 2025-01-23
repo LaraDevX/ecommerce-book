@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers\v1;
 
-use App\Http\Requests\StoreCategoryRequest;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreCategoryRequest;
 
 class CategoryController extends Controller
 {
@@ -13,7 +14,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        $categories = Category::with('books')->paginate(10);
+        return $this->responsePagination($categories, CategoryResource::collection($categories));
     }
 
     /**
@@ -21,7 +23,7 @@ class CategoryController extends Controller
      */
     public function store(StoreCategoryRequest $request)
     {
-        
+
     }
 
     /**
