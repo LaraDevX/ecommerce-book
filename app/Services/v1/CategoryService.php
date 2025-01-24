@@ -10,4 +10,14 @@ class CategoryService
     public function createCategory($data){
 
     }
+
+    public function getCategory($id){
+
+    }
+    public function updateCategory($data, $id){
+
+    }
+    public function deleteCategory($id){
+        
+    }
 }
