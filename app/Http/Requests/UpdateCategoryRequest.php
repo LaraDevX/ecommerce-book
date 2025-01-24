@@ -22,7 +22,13 @@ class UpdateCategoryRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            [
+                'translations.en.name' => 'sometimes|string',
+                'translations.ru.name' => 'sometimes|string',
+                'translations.uz.name' => 'sometimes|string',
+
+                'parent_id' => 'nullable|exists:categories,id'
+            ]
         ];
     }
 }
