@@ -2,13 +2,7 @@
 
 namespace App\Interfaces\Repositories\v1;
 
-class CategoryRepositoryInterface
+interface CategoryRepositoryInterface
 {
-    /**
-     * Create a new class instance.
-     */
-    public function __construct()
-    {
-        //
-    }
+    
 }
