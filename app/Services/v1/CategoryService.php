@@ -4,11 +4,10 @@ namespace App\Services\v1;
 
 class CategoryService
 {
-    /**
-     * Create a new class instance.
-     */
-    public function __construct()
-    {
-        //
+    public function allCategories($perPage){
+
+    }
+    public function createCategory($data){
+
     }
 }
