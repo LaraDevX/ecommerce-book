@@ -24,6 +24,12 @@ class CategoryController extends Controller
      */
     public function store(StoreCategoryRequest $request)
     {
+        $category = new Category();
+        $category->name = $request->name;
+        $translations = $this->prepareTranslations($request->translations, ['name']);
+        $category->fill($translations);
+        $category->save();
+        return $this->success($category, __('successes.category.created'), 201);
 
     }
 
