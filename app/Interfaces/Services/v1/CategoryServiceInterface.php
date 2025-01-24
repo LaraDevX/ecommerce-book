@@ -2,13 +2,8 @@
 
 namespace App\Interfaces\Services\v1;
 
-class CategoryServiceInterface
+interface CategoryServiceInterface
 {
-    /**
-     * Create a new class instance.
-     */
-    public function __construct()
-    {
-        //
-    }
+    public function allCategories($perPage);
+    public function createCategory($data);
 }

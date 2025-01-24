@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\v1;
 
+use App\Interfaces\Services\v1\CategoryServiceInterface;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -10,12 +11,12 @@ use App\Http\Requests\StoreCategoryRequest;
 
 class CategoryController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+    public function __construct(protected CategoryServiceInterface $categoryService){
+
+    }
     public function index()
     {
-        $categories = Category::with('books')->paginate(10);
+        $categories = $this->categoryService->allCategories(10);
         return $this->responsePagination($categories, CategoryResource::collection($categories));
     }
 
@@ -24,11 +25,7 @@ class CategoryController extends Controller
      */
     public function store(StoreCategoryRequest $request)
     {
-        $category = new Category();
-        $category->name = $request->name;
-        $translations = $this->prepareTranslations($request->translations, ['name']);
-        $category->fill($translations);
-        $category->save();
+        $category = $this->categoryService->createCategory($request->all());
         return $this->success($category, __('successes.category.created'), 201);
 
     }
