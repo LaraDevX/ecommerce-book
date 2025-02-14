@@ -2,13 +2,12 @@
 
 namespace App\Interfaces\Services\v1;
 
-class BookServiceInterface
+interface BookServiceInterface
 {
-    /**
-     * Create a new class instance.
-     */
-    public function __construct()
-    {
-        //
-    }
+public function allBooks();
+public function createBook($bookDTO);
+public function updateBooks($bookDTO, $id);
+public function showBook($id);
+public function deleteBook($id);
+
 }
