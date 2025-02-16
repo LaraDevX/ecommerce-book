@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Interfaces\Services\v1\BookServiceInterface;
+use App\Services\v1\BookService;
 use App\Services\v1\UserService;
 use App\Repositories\v1\UserRepository;
 use Illuminate\Support\ServiceProvider;
@@ -17,6 +19,7 @@ class AppServiceProvider extends ServiceProvider
     {
         $this->app->bind(UserServiceInterface::class, UserService::class);
         $this->app->bind(UserRepositoryInterface::class, UserRepository::class);
+        $this->app->bind(BookServiceInterface::class, BookService::class);
     }
 
     /**
