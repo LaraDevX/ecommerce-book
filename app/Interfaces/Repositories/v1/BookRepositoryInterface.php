@@ -2,13 +2,11 @@
 
 namespace App\Interfaces\Repositories;
 
-class BookRepositoryInterface
+interface BookRepositoryInterface
 {
-    /**
-     * Create a new class instance.
-     */
-    public function __construct()
-    {
-        //
-    }
+public function index();
+public function create($data);
+public function update($data, $id);
+public function show($id);
+public function destroy($id);
 }
